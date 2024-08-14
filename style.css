@@ -536,6 +536,11 @@ ul li {
     .large {
         grid-column: span 1;
         grid-row: span 1;
+        background-image: none;
+    }
+    .medium{
+      background-image: none;
+
     }
 }
 
@@ -815,6 +820,7 @@ html, body, main {
     
     #carousel{
       width: auto;
+
     }
     #carousel div img{
       width: 400px;
@@ -1534,7 +1540,8 @@ h2 {
 }
 
 .slide img {
-  width: 100%;
+  width: 250px;
+  height:250px ;
   border-bottom: 2px solid #ccc;
 }
 
@@ -1961,11 +1968,19 @@ h2 {
       width: 50%;
       margin-right: 0;
       margin-bottom: 20px;
-      height: 50%;
+      height: 70%;
   }
 
   .text-section {
       width: 100%;
       text-align: center;
   }
+}
+@media (max-width: 480px) {
+  .side-panel {
+    width: 50%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    height: 70%;
+}
 }
