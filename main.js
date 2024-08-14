@@ -84,12 +84,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const startAutoScroll = () => {
         stopAutoScroll();
         autoScrollInterval = setInterval(() => {
-            carousel.scrollBy({ left: -firstCardWidth, behavior: 'smooth' });
+            carousel.scrollBy({ left: firstCardWidth, behavior: 'smooth' });
 
-            if (carousel.scrollLeft <= 0) {
-                
+            if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth)) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
             }
-        }, ); 
+        }, 3000); // Adjust the interval as needed
     };
 
     const stopAutoScroll = () => {
@@ -99,14 +99,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const dragStart = (e) => {
         isDragging = true;
         carousel.classList.add("dragging");
-        startX = e.pageX;
+        startX = e.pageX || e.touches[0].pageX;
         startScrollLeft = carousel.scrollLeft;
         stopAutoScroll();
     };
 
     const dragging = (e) => {
         if (!isDragging) return;
-        const newScrollLeft = startScrollLeft - (e.pageX - startX);
+        const x = e.pageX || e.touches[0].pageX;
+        const newScrollLeft = startScrollLeft - (x - startX);
         carousel.scrollLeft = newScrollLeft;
     };
 
@@ -119,14 +120,16 @@ document.addEventListener("DOMContentLoaded", function() {
     carousel.addEventListener("mousedown", dragStart);
     carousel.addEventListener("mousemove", dragging);
     document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("touchstart", dragStart);
+    carousel.addEventListener("touchmove", dragging);
+    document.addEventListener("touchend", dragStop);
     carousel.addEventListener("mouseenter", stopAutoScroll);
     carousel.addEventListener("mouseleave", startAutoScroll);
 
     startAutoScroll(); // Start autoplay on load
 });
 
-// our projects
-
+// other carousel logic
 const $ = str => document.querySelector(str);
 const $$ = str => document.querySelectorAll(str);
 
@@ -150,7 +153,7 @@ const $$ = str => document.querySelectorAll(str);
             let childcnt = $("#carousel").children.length;
             let childs = $("#carousel").children;
 
-            for (let j=0; j< childcnt; j++) {
+            for (let j = 0; j < childcnt; j++) {
                 childs[j].dataset.pos = j;
             }
         },
@@ -158,9 +161,7 @@ const $$ = str => document.querySelectorAll(str);
             let selected = el;
 
             if (typeof el === "string") {
-            console.log(`got string: ${el}`);
                 selected = (el == "next") ? $(".selected").nextElementSibling : $(".selected").previousElementSibling;
-                console.dir(selected);
             }
 
             let curpos = parseInt(app.selected.dataset.pos);
@@ -170,7 +171,7 @@ const $$ = str => document.querySelectorAll(str);
             let dir = (cnt < 0) ? -1 : 1;
             let shift = Math.abs(cnt);
 
-            for (let i=0; i<shift; i++) {
+            for (let i = 0; i < shift; i++) {
                 let el = (dir == -1) ? $("#carousel").firstElementChild : $("#carousel").lastElementChild;
 
                 if (dir == -1) {
@@ -184,12 +185,11 @@ const $$ = str => document.querySelectorAll(str);
                 app.carousel.reorder();
             }
 
-
             app.selected = selected;
-            let next = selected.nextElementSibling;// ? selected.nextElementSibling : selected.parentElement.firstElementChild;
-            var prev = selected.previousElementSibling; // ? selected.previousElementSibling : selected.parentElement.lastElementChild;
-            var prevSecond = prev ? prev.previousElementSibling : selected.parentElement.lastElementChild;
-            var nextSecond = next ? next.nextElementSibling : selected.parentElement.firstElementChild;
+            let next = selected.nextElementSibling;
+            let prev = selected.previousElementSibling;
+            let prevSecond = prev ? prev.previousElementSibling : selected.parentElement.lastElementChild;
+            let nextSecond = next ? next.nextElementSibling : selected.parentElement.firstElementChild;
 
             selected.className = '';
             selected.classList.add("selected");
@@ -200,8 +200,8 @@ const $$ = str => document.querySelectorAll(str);
             app.carousel.removeClass(nextSecond).classList.add("nextRightSecond");
             app.carousel.removeClass(prevSecond).classList.add("prevLeftSecond");
 
-            app.carousel.nextAll(nextSecond).forEach(item=>{ item.className = ''; item.classList.add('hideRight') });
-            app.carousel.prevAll(prevSecond).forEach(item=>{ item.className = ''; item.classList.add('hideLeft') });
+            app.carousel.nextAll(nextSecond).forEach(item => { item.className = ''; item.classList.add('hideRight'); });
+            app.carousel.prevAll(prevSecond).forEach(item => { item.className = ''; item.classList.add('hideLeft'); });
 
         },
         nextAll: function(el) {
@@ -220,7 +220,6 @@ const $$ = str => document.querySelectorAll(str);
             if (el) {
                 while (el = el.previousElementSibling) { els.push(el); }
             }
-
 
             return els;
         },
@@ -241,7 +240,6 @@ const $$ = str => document.querySelectorAll(str);
             return false;
         },
         select: function(e) {
-        console.log(`select: ${e}`);
             let tgt = e.target;
             while (!tgt.parentElement.classList.contains('carousel')) {
                 tgt = tgt.parentElement;
@@ -257,19 +255,15 @@ const $$ = str => document.querySelectorAll(str);
             app.carousel.move('next');
         },
         doDown: function(e) {
-        console.log(`down: ${e.x}`);
-            app.carousel.state.downX = e.x;
+            app.carousel.state.downX = e.pageX || e.touches[0].pageX;
         },
         doUp: function(e) {
-        console.log(`up: ${e.x}`);
-            let direction = 0,
-                velocity = 0;
+            let direction = 0;
 
             if (app.carousel.state.downX) {
-                direction = (app.carousel.state.downX > e.x) ? -1 : 1;
-                velocity = app.carousel.state.downX - e.x;
+                direction = (app.carousel.state.downX > (e.pageX || e.changedTouches[0].pageX)) ? -1 : 1;
 
-                if (Math.abs(app.carousel.state.downX - e.x) < 10) {
+                if (Math.abs(app.carousel.state.downX - (e.pageX || e.changedTouches[0].pageX)) < 10) {
                     app.carousel.select(e);
                     return false;
                 }
@@ -283,11 +277,10 @@ const $$ = str => document.querySelectorAll(str);
         },
         init: function() {
             document.addEventListener("keydown", app.carousel.keypress);
-           // $('#carousel').addEventListener("click", app.carousel.select, true);
             $("#carousel").addEventListener("mousedown", app.carousel.doDown);
             $("#carousel").addEventListener("touchstart", app.carousel.doDown);
             $("#carousel").addEventListener("mouseup", app.carousel.doUp);
-            $("#carousel").addEventListener("touchend", app.carousel.doup);
+            $("#carousel").addEventListener("touchend", app.carousel.doUp);
 
             app.carousel.reorder();
             $('#prev').addEventListener("click", app.carousel.previous);
@@ -300,6 +293,7 @@ const $$ = str => document.querySelectorAll(str);
     }
     app.carousel.init();
 })();
+
 
 // map
   function initMap() {

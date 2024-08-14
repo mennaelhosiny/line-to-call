@@ -113,9 +113,9 @@ a{
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 90px;
+      top: 50px;
       right: 0;
-      background-color: #806e60;
+      background-color: var(--blue);
       width: 100%;
       text-align: center;
   }
@@ -477,14 +477,21 @@ button:hover {
 }
 .large {
     grid-column: span 2;
-    background-image: url(images/lines.png);
+    background-image: url(images/line.png);
     background-size:cover;
+    background-repeat: no-repeat;
+
 }
 
 .medium {
     grid-column: span 1;
     grid-row: span 2;
     background-color: rgb(113, 113, 113);
+    background-image: url(images/lines.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+
+
 }
 .small{
   background-color: #858585;
@@ -544,7 +551,7 @@ ul li {
 .team-section h1{
   text-align: center;
   font-size: 40px;
-  color: #fff;
+  color: var(--blue);
 }
 .team-container {
   margin: 50px 0 50px 0;
@@ -628,6 +635,7 @@ html, body, main {
 
   }
   main{
+    margin-top: 20px;
     background-color: #0d2a4a;
   }
   main h1{
@@ -1163,6 +1171,7 @@ html, body, main {
       padding: 20px;
       display: block;
       height: auto;
+      margin: auto;
 
 
   }
@@ -1496,7 +1505,7 @@ h2 {
 }
 
 .filter-btn.active, .filter-btn:hover {
-  background-color: #333;
+  background-color: var(--blue);
   color: #fff;
 }
 
@@ -1541,7 +1550,7 @@ h2 {
 }
 
 .slider-btn {
-  background-color: #333;
+  background-color: var(--blue);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -1949,9 +1958,10 @@ h2 {
   }
 
   .side-panel {
-      width: 100%;
+      width: 50%;
       margin-right: 0;
       margin-bottom: 20px;
+      height: 50%;
   }
 
   .text-section {
