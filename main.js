@@ -10,38 +10,39 @@ function closeNavbar() {
     navbarLinks.classList.remove('active');
 }
 
-
 //fillteration
 document.addEventListener("DOMContentLoaded", function() {
     const filterButtons = document.querySelectorAll(".filter-btn");
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
+    const slider  = document.querySelector(".slider");
+    const slides =document.querySelectorAll(".slide");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
-    let currentIndex = 0;
+    let currentIndex = 1;
+    let currentSlides = Array.from(slides); // Array to hold currently visible slides
 
     const updateSliderPosition = () => {
-        const offset = -currentIndex * (slides[0].offsetWidth + 20);
-        slider.style.transform = `translateX(${offset}px)`;
+        const totalWidth = currentSlides[0].offsetWidth + 20;
+        const offset = currentIndex * totalWidth; 
+        slider.style.transform = `translateX(${offset}px)`; 
+    };
+    
+
+    const showNextCard = () => {
+        if (currentIndex < currentSlides.length - 1) {
+            currentIndex++;
+            updateSliderPosition();
+        }
     };
 
-    prevBtn.addEventListener("click", () => {
+    const showPrevCard = () => {
         if (currentIndex > 0) {
             currentIndex--;
-        } else {
-            currentIndex = slides.length - 1;
+            updateSliderPosition();
         }
-        updateSliderPosition();
-    });
+    };
 
-    nextBtn.addEventListener("click", () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateSliderPosition();
-    });
+    prevBtn.addEventListener("click", showPrevCard);
+    nextBtn.addEventListener("click", showNextCard);
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -51,21 +52,29 @@ document.addEventListener("DOMContentLoaded", function() {
             const filter = button.getAttribute("data-filter");
             currentIndex = 0;
 
-            slides.forEach(slide => {
+            // Filter the slides based on data-category
+            currentSlides = Array.from(slides).filter(slide => {
                 if (filter === "all" || slide.getAttribute("data-category") === filter) {
                     slide.style.display = "block";
+                    return true;
                 } else {
                     slide.style.display = "none";
+                    return false;
                 }
             });
 
+            // Reset the slider to the first slide of the filtered group
             updateSliderPosition();
         });
     });
 
+    // Initialize by showing the first slide
     updateSliderPosition();
 });
 
+
+
+   
 
 
 
