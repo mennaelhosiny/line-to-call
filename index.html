@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> line to call</title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@300;400;600;700&family=Changa:wght@300;400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=Lateef&family=Lalezar&family=Mada:wght@200;300;400;500;600;700;900&family=Markazi+Text:wght@400;500;600;700&family=Mirza:wght@400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+ 
+
+    
+
+</head>
+<body>
+    <!-- nav -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="logo"><img src="images/Asset 12.png" alt="logo" class="lazy"></a>
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="closeNavbar()" >الصفحه الرئيسية</a></li>
+                    <li><a href="#about" onclick="closeNavbar()">من نحن</a></li>
+                    <li><a href="page.html" onclick="closeNavbar()">اعمالنا</a></li>
+                    <li><a href="service.html" onclick="closeNavbar()">خدماتنا</a></li>
+                    <li><a href="projects.html" onclick="closeNavbar()"> هنا بدأت</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <button class="btn-nav">
+                    <a href="https://www.pinterest.com/search/pins/?q=map&rs=typed">تواصل معنا</a>
+                </button>
+            </div>
+        </nav>
+    </header>
+  
+     <!-- home -->
+    <div class="hero-section" id="home">
+        <div class="content">
+            <h1>من هنا تبدأ قصص الريادة العقارية</h1>
+            <p>نجاح المؤسسات في السوق العقاري يبدأ بالتسويق الالكتروني الفعال، مع لاين تو كول نضع استراتيجيات رقمية قوية مبتكرة تترجم إلى قصص نجاح تروى في عالم العقارات.</p>
+            <div class="buttons">
+                <button class="btn1">لنصنع نجاحك معًا    </button>
+                <button class="btn2">استشارة مجانية لمشروعك
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    <section class="solutions-section" id="about">
+       
+        <div class="text-content">
+            <h4>من هي لاين تو كول</h4>
+            <h1>شركة تسويق الكتروني لدينا فريق من الخبراء والمحترفين والمبدعين في جميع أقسام التخصصات الرقمية.</h1>
+            <p>متعمقون في فهم السوق السعودي وتطوراته. ونتابع باستمرار كل ما يحدث في السوق العقاري   </p>
+            <ul>
+                <li>
+                    نقدم  استراتيجيات تسويقية مبتكرة مدروسة تحقق نجاحًا ملموسًا يترجم لأرقام ومبيعات. 
+                </li>
+                <li>متواجدين هنا لمساعدة أصحاب المؤسسات العقارية  في استهداف العملاء المهتمين وتحويلهم إلى عملاء مؤكدين ومشترين فعليين، مما يضمن لهم النجاح والريادة في عالم العقارات.</li>
+              
+            </ul>
+        </div>
+        <div class="image-content">
+            <video width="400" autoplay muted playsinline controls loop>
+                <source src="images/line to call_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <script>
+                // Optional: Check for errors in loading the video
+                document.querySelector('video').addEventListener('error', function(event) {
+                    console.log('Error loading video:', event);
+                    alert('There was an error loading the video.');
+                });
+            </script>
+        </div>
+       
+    
+    </section>
+
+    <!-- service -->
+    <section id="service">
+        <h1>خدماتنا</h1>
+        <div class="container">
+            <div class="service-box large">
+                <h2 >  تصميم وتعديل الهوية بصرية   </h2>
+                 <p>نصمم هوية بصرية تعبر عن علامتك التجارية العقارية،</p>
+                 <p>ونحرص على اختيار ألوان وشعارات في تصميم العناصر البصرية</p>
+                 <p>تترك انطباعاً قوياً من اللحظة الأولى وتبني الثقة مع عملائك وتخلق هوية تميزك و تبرزك في السوق .  </p>
+         
+              
+            </div>
+            <div class="service-box medium" >
+               
+          
+                 <h2 >تنفيذ ومتابعة الحملات الإعلانية الممولة</h2>
+                 <p>نختص بإنشاء وتنفيذ حملات اعلانية ممولة على جميع منصات التواصل الاجتماعي .</p>
+                 <p> تستهدف الجمهور الصحيح  بدقة لضمان تحقيق أعلى عائد على الاستثمار</p>
+                 <p>ونقوم بتنفيذ حملات إعلانات جوجل التي  تضمن تحقيق أقصى قدر من الفعالية والوصول.</p>
+                 <p>ونتابع الحملات الإعلانية باستمرار، ونحلل الأداء لنحقق الأهداف الإعلانية دون إهدار للميزانية،</p>
+                 <p>ونتأكد أن كل حملة  تساهم بشكل فعال في تعزيز نمو علامتك التجارية العقارية . </p>
+   
+                </div>
+           
+            <div class="service-box small">
+                <h2>ابتكار تصميمات ابداعية </h2>
+                <p>نبتكر تصميمات ابداعية تعكس رقي وجمال مشاريعك العقارية،</p>
+                <p>كل تصميم نقوم بإنتاجه يهدف إلى إبراز تفاصيل مشاريعك بطريقة تجذب إنتباه العملاء</p>
+                <p>وتلامس احتياجات السوق مما يساعد على تعزيز علامتك التجارية وثقة عملائك وتحقيق مبيعات أكبر . </p>
+                
+            </div>
+             <div class="service-box small2">
+                <h2>بحث ودراسة السوق المستهدف</h2>
+                <p>نوفر لك تحليلات متعمقة ودراسات تفصيلية لاتجاهات السوق والمنافسين واحتياجات العملاء،</p>       
+                <p>مما يمكننا من استهداف جمهورك بدقة </p>     
+                <p>وتحقيق الأهداف المرجوة من حملاتك التسويقية في السوق العقاري .  </p>     
+              
+             </div>
+        </div>
+    </section>
+
+     <!-- how we work -->
+        <main class="how">
+            <section class="team-section">
+                <h1>كيف ندير علامتك التجارية العقارية             </h1>
+                <div class="team-container">
+                    <div class="team-member">
+                        <p>نبدأ بتحليل شامل لعلامتك التجارية العقارية وسوق المنافسين. يشمل ذلك دراسة نقاط القوة والضعف والفرص المتاحة في السوق العقاري.</p>
+                        <img src="images/1.png" alt="Arik Smith">
+                        <h2>التحليل والتقييم  </h2>
+                       
+                    </div>
+                    <div class="team-member">
+                        <h2>صياغة الاستراتيجية التسويقية </h2>
+                        <img src="images/2.png" alt="Arik Smith">
+                        <p> نضع استراتيجية تسويقية متكاملة تشمل جميع الجوانب الرقمية من تحسين محركات البحث، إلى حملات الإعلانات المدفوعة، وإدارة وسائل التواصل الاجتماعي لتحقيق أهداف العلامة التجارية.                    </p>
+                       
+                    </div>
+                    <div class="team-member">
+                        <p>نقوم بتصميم هوية بصرية متكاملة تعكس قيم علامتك التجارية وتجذب الجمهور المستهدف ، مما يعزز من مكانتك في السوق العقاري.</p>
+                        <img src="images/3.png" alt="Arik Smith">
+                        <h2>ابتكار الهوية البصرية </h2>
+                      
+                    </div>
+                    <div class="team-member">
+                        <h2> تنفيذ الحملات التسويقية  </h2>
+                        <img src="images/4.png" alt="Arik Smith">
+                        <p>نبدأ في تنفيذ الاستراتيجية عبر إطلاق حملات إعلانية موجهة، واستخدام أدوات التسويق الرقمي المختلفة للوصول إلى جمهورك المستهدف بشكل فعال ودقيق.                    </p>
+                     
+                    </div>
+                    <div class="team-member">
+                        <p>نتابع أداء الحملات بشكل مستمر ونقوم بتحليل البيانات لتقديم تقارير دورية، مع إجراء التعديلات اللازمة لتحسين الأداء لضمان تحقيق الأهداف .</p>
+                        <img src="images/5.png" alt="Arik Smith">
+                        <h2>المتابعة والتحليل </h2>
+                      
+                    </div>
+                    <div class="team-member">
+                        <h2> التواصل والدعم </h2>
+                        <img src="images/6.png" alt="Arik Smith">
+                        <p>نقدم خدمة دعم متواصلة لضمان نجاح الحملات والإجابة على أي استفسارات أو تعديلات مطلوبة.وتقديم تقارير دورية شاملة حول أرقام المبيعات وأداء الإعلانات .</p>
+                    
+                    </div>
+                    <div class="team-member">
+                        <p>نقوم بإجراء مراجعات دورية للاستراتيجية ولنتائج الحملات، مع اقتراح تعديلات أو تحسينات بناءً على تغيرات السوق العقاري واحتياجات العملاء المستجدة.</p>
+                        <img src="images/7.png" alt="Arik Smith">
+                        <h2> المراجعة والتطوير </h2>
+                    
+                    </div>
+                   
+                </div>
+            </section>
+        </main>        
+    
+   <!-- out projects -->
+    <main id="projects">
+
+        <h1>مشاريعنا </h1>
+        <div id="carousel" class="carousel">
+
+        <div id='item_1' class="hideLeft">
+            <img src="images/elawaji-BL.png">
+        </div>
+
+        <div id='item_2' class="prevLeftSecond">
+            <img src="images/gold-bl.png">
+        </div>
+
+        <div id='item_3' class="prev">
+            <img src="images/white-diamond-BL.png">
+        </div>
+
+        <div id='item_4' class="selected">
+            <img src="images/eliet-bl.png">
+        </div>
+
+        <div id='item_5' class="next">
+            <img src="images/sweet-bl.png">
+        </div>
+
+        <div id='item_6' class="nextRightSecond">
+            <img src="images/home-plaza-BL.png">
+        </div>
+
+        <div id='item_7' class="hideRight">
+            <img src="images/HOME-RESISEDNCE-BL.png">
+        </div>
+
+        </div>
+
+        <div class="buttons2">
+            <button class="button-82-pushable" role="button" id="prev"><span class="button-82-shadow"></span><span class="button-82-edge"></span><span class="button-82-front text">Previous</span></button>
+
+
+            <button class="button-82-pushable" role="button" id="next"><span class="button-82-shadow"></span><span class="button-82-edge"></span><span class="button-82-front text">Next</span></button>
+        </div>
+    </main>
+   <!-- value -->
+    <section class="values-section" id="value">
+            <h1> <span class="highlight">قيمنا </span></h1>
+            <div class="values-container">
+                <div class="value-item">
+                    <img src="images/8.png" alt="Commitment Icon">
+                    <h3>الالتزام</h3>
+                    <p>نلتزم  بتقديم استراتيجيات تسويق إلكتروني مخصصة تضمن تحقيق أهداف العلامات  التجارية وتوسيع نطاق وجودهم الرقمي.</p>
+                </div>
+                <div class="value-item">
+                    <img src="images/9.png" alt="Results Oriented Icon">
+                    <h3>ضمان تحقيق النتائج المرجوة</h3>
+                    <p>نضمن لك تحقيق أهدافك بكفاءة ودقة، مع متابعة مستمرة وتحليل بيانات لضمان الوصول إلى أفضل النتائج التي تعزز مكانتك في السوق.</p>
+                </div>
+                <div class="value-item">
+                    <img src="images/10.png" alt="ROI Icon">
+                    <h3>تحويل الاستثمار إلى أرباح</h3>
+                    <p>نحرص بأن كل ريال تستثمره يعود عليك بأرباح ونتائج ملموسة باستخدام استراتيجيات تسويقية مدروسة و أقصى عائد على الاستثمار .                    </p>
+                </div>
+            </div>
+    </section>
+   <!-- ready -->
+    <section class="cta-section">
+        <div class="cta-content">
+
+
+            <div class="cont">
+                <h1>  جاهز لاستقبال <br>    المزيد من العملاء لمشروعك؟</h1>
+                <p>بخبرتنا العميقة و استراتيجيات تسويق مبتكرة، نحول التسويق الالكتروني إلى أداة قوية تدفع علامتك التجارية نحو القمة، محققين نجاح ونتائج واضحة وحقيقية في السوق.  </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Home-gold-%D8%B4%D9%82%D9%82-%D9%81%D9%86%D8%AF%D9%82%D9%8A%D8%A9/61561761586782/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/home_gold__/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCFo-iiWlkA6KOlo6BmN7KKw"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com/HomeGold396245"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://maps.app.goo.gl/tjx8UDKQHgZE6Qm59"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+        
+            <div class="btnn">
+                <a href="#" class="cta-button">ابدأ معناالان</a>
+            </div>
+
+        </div>
+    </section>
+   <!-- carsoul -->
+   <div class="carousel-container" >
+    <div class="carousel">
+        <div class="carousel-item card">
+            <img src="images/hero-slide-1.jpg" alt="Music">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="images/hero-slide-1.jpg" alt="Men's Fashion">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="images/hero-slide-1.jpg" alt="Women's Fashion">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="supermarket.jpg" alt="SuperMarket">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="baby-toys.jpg" alt="Baby & Toys">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="home.jpg" alt="Home">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="appliances.jpg" alt="Appliances">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="books.jpg" alt="Books">
+           <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="appliances.jpg" alt="Appliances">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="books.jpg" alt="Books">
+           <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="appliances.jpg" alt="Appliances">
+            <p>كلينت</p>
+        </div>
+        <div class="carousel-item card">
+            <img src="books.jpg" alt="Books">
+           <p>كلينت</p>
+        </div>
+    </div>
+</div>
+   <!-- client -->
+   <section class="client-testimonial-section">
+    <div class="testimonial-container">
+        <div class="testimonial-text">
+            <h2>آراء شركائنا في النجاح</h2>
+            <p>تجارب عملائنا هي دليل على التزامنا ونجاحنا،  تعرف على ما يقوله شركائنا عن التعاون معنا  واكتشف كيف نجحنا في تجاوز توقعاتهم وتلبية احتياجاتهم.</p>
+            </p>
+            <button  class="more-testimonials-button">اراء اخرى </button>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <img src="images/hero-slide-1.jpg" alt="Client Photo">
+                <h4>فهد العتيبي</h4>
+                <p>الخدمات التي تقدمها لاين تو كول تفوق كل التوقعات بفضل جهودهم نجحنا في الوصول لعملاء أكثر وزيادة نسبة المبيعات.</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/hero-slide-1.jpg" alt="Client Photo">
+                <h4>خالد العواجي </h4>
+                <p>تجربتي مع لاين تو كول لم تكن مجرد خدمة تسويق الكتروني. بل كانت شراكة حقيقية ساهمت في تحقيق نتائج أفضل مما توقعت في السوق العقاري وتحقيق نسبة إشغال كاملة للمشاريع  .
+                </p>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/hero-slide-1.jpg" alt="Client Photo">
+                <h4> محمد سعود                 </h4>
+                <p>أفضل ما في فريق الشركة هو تقديم حلول تلبي احتياجات عملائي بشكل دقيق، النتائج كانت رائعة. تضاعفت نسبة التفاعل مع علامتي التجارية وزادت المبيعات بشكل ملحوظ .</p>
+            </div>
+        </div>
+    </div>
+    <div class="map-container">
+        <img src="images/img1.png" alt="Map Image">
+    </div>
+   </section>
+
+    <!-- contact-us -->
+    <section class="contact-section">
+        <div class="contact-header">
+            <h1> تواصل معنا </h1>
+            <p class="description">
+                إذا كنت جاهزاً لتحقيق النجاح ونقل علامتك التجارية للقمة، اتصل بنا الآن لتلبية متطلبات أعمالك التسويقية وتحقيق أهدافك التجارية مع خبراء تسويق متخصصين واحصل على استشارة مجانية لتقييم اعمالك 
+            </p>
+            <button class="live-chat-btn">تحدث مع المتخصصين        </button>
+        </div>
+        <div class="contact-cards">
+            <div class="contact-card email">
+                <span class="icon">📧</span>
+                <h2>البريد الالكتروني</h2>
+                <p>customerservice@linetocall.com</p>
+                <div class="contain">
+
+                    <button class="contact-btn">تحدث مع المتخصصين   </button>
+                </div>
+               
+            </div>
+            <div class="contact-card phone">
+                <span class="icon">📞</span>
+                <h2>الفون</h2>
+                <p>201070831777</p>
+                <div class="contain">
+                    <button class="contact-btn">تحدث مع المتخصصين   </button>
+                </div>
+              
+            </div>
+            <div class="contact-card office">
+                <span class="icon">📍</span>
+                <h2>العنوان</h2>
+                <p> السعودية - مصر </p>
+                <div class="contain">
+               <button class="contact-btn">تحدث مع المتخصصين  </button>
+                </div>
+             
+            </div>
+        </div>
+    </section>
+    
+   <!-- footer    -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <a href="#" class="start-project">ابدأ مشروعك ←</a>
+            <ul class="footer-services">
+                <li>إدارة الإعلام الرقمي</li>
+                <li>التسويق الرقمي</li>
+                <li>التصميم</li>
+                <li>الإنتاج المرئي</li>
+            </ul>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-center-list">
+                <li>بناء الموقع الإلكتروني</li>
+                <li>بناء هوية العلامة</li>
+                <li>النمو الإبداعي</li>
+                <li>بناء الحملات الرقمية</li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <div class="footer-logo">
+                <img src="images/hero-slide-1.jpg" alt="Eskelah">
+            </div>
+           
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-vimeo"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
+
