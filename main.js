@@ -10,6 +10,9 @@ function closeNavbar() {
     navbarLinks.classList.remove('active');
 }
 
+
+
+
 //fillteration
 document.addEventListener("DOMContentLoaded", function() {
     const filterButtons = document.querySelectorAll(".filter-btn");
@@ -17,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const slides =document.querySelectorAll(".slide");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
-    let currentIndex = 1;
+    let currentIndex = 0;
     let currentSlides = Array.from(slides); // Array to hold currently visible slides
 
     const updateSliderPosition = () => {
@@ -28,18 +31,28 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     const showNextCard = () => {
-        if (currentIndex < currentSlides.length - 1) {
+        const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
+        if (currentIndex < currentSlides.length - slidesToShow) {
             currentIndex++;
+            updateSliderPosition();
+        } else {
+            currentIndex = 0;  
             updateSliderPosition();
         }
     };
+    
 
     const showPrevCard = () => {
+        const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
         if (currentIndex > 0) {
             currentIndex--;
             updateSliderPosition();
+        } else {
+            currentIndex = currentSlides.length - slidesToShow;       
+            updateSliderPosition();
         }
     };
+    
 
     prevBtn.addEventListener("click", showPrevCard);
     nextBtn.addEventListener("click", showNextCard);
@@ -74,10 +87,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-   
+  // service   
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("testimoniall");
+    if (n >= slides.length) { slideIndex = 0 }
+    if (n < 0) { slideIndex = slides.length - 1 }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex].style.display = "block";
+}
+
+// Automatic slideshow
+setInterval(function() {
+    changeSlide(1);
+}, 3000); // Change slide every 5 seconds
+ 
 
 
 
+
+// carsoul
 
 // carsoul
 document.addEventListener("DOMContentLoaded", function() {
@@ -304,18 +341,7 @@ const $$ = str => document.querySelectorAll(str);
 })();
 
 
-// map
-  function initMap() {
-    var location = { lat: -25.363, lng: 131.044 }; // Replace with desired latitude and longitude
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: location
-    });
-    var marker = new google.maps.Marker({
-      position: location,
-      map: map
-    });
-  }
+
 
 
 //   clint
@@ -343,6 +369,8 @@ document.querySelector('.prev-button').addEventListener('click', showPrevCard);
 
 // Initialize by showing the first card
 showCard(index);
+
+
 
 
 
