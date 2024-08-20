@@ -1719,6 +1719,7 @@ main h1{
 
 .footer-services li {
   margin-bottom: 5px;
+  text-align: right;
 }
 
 .footer-center {
@@ -1768,7 +1769,7 @@ main h1{
   text-decoration: none;
   font-size: 20px;
   transition: color 0.3s;
-  margin-right: 15px;
+  margin-left: 15px;
 
 }
 .suodia{
@@ -1817,13 +1818,49 @@ main h1{
   }
 
   .footer-center-list a {
-    text-align: center;
+    text-align: right;
   }
 
   .footer-social {
-    text-align: center;
+    text-align: right;
   }
 }
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+  font-size: 20px;
+  justify-content: flex-end;
+
+}
+
+footer h2{
+  justify-content: right; 
+
+}
+.dropdown-toggle.active i {
+  transform: rotate(180deg); 
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+  .dropdown-menu {
+      display: none; 
+  }
+  
+  .dropdown-toggle {
+      cursor: pointer;
+  }
+  
+  .dropdown-menu.show {
+      display: block; 
+  }
+}
+
 
 /* page2 */
 
