@@ -43,10 +43,12 @@ body {
   color: var(--accent-color);
 }
 .menu-icon {
-  display: none;
   font-size: 30px;
   cursor: pointer;
-  color: var(--accent-color);
+  color: #fff;
+}
+.nav-links.active{
+  background-color: #000;
 }
 .btn-nav:hover,
 .btn1:hover,
@@ -256,7 +258,9 @@ button:hover {
     background-color: #121212; 
   }
   
- 
+  #projects{
+    background-color: #000 !important;
+  }
   
   main h1 {
     color: #f4a261;
@@ -802,5 +806,7 @@ button:hover {
    padding: 20px;
   }
     
-     
+   .btn  {
+    color: #000;
+   }
  

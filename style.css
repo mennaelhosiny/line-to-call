@@ -222,7 +222,6 @@ a{
 
 .btn{
   text-align: center !important;
-  margin-top: 20px;
 }
 
 button {
@@ -702,7 +701,7 @@ ul li {
   background-color: #fff;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(82, 75, 75, 0.1);
-  height: 550px;
+  height: 580px;
   font-size: 20px;
   padding: 20px;
 
@@ -728,6 +727,8 @@ color: var(--yellow);
 }
 .testimoniall p{
   color: var(--blue);
+  font-size: 18px;
+
 }
 .prevv, .nextt {
   cursor: pointer;
@@ -878,8 +879,8 @@ main h1{
   overflow: hidden;
   color: #fff;
   background-color: #fff;
-  padding: 30px;
-  margin: auto;
+  padding: 15px;
+    margin: auto;
   width: 80%;
 }
 #carousel div {
@@ -1384,7 +1385,6 @@ main h1{
   padding: 20px;
   text-align: center;
   width: 50%;
-  height: 250px;
   border-bottom: #696767 2px solid;
   text-align: right;
 }
@@ -1450,6 +1450,7 @@ main h1{
       z-index: 0;
       position: static;
       text-align: center;
+      height: auto;
   }
   .testimonial-text{
     width: 100%;
@@ -1461,11 +1462,14 @@ main h1{
 
   .testimonial-text p {
       font-size: 1em;
+      padding: 0 3px 0 3px;
   }
 
   .more-testimonials-button {
       font-size: 0.9em;
       padding: 8px 15px;
+      margin-top: -4px;
+
   }
 
   .testimonial-card p {
@@ -1635,6 +1639,8 @@ main h1{
 
   .contact-card {
       width: 100%;
+      margin-top:50px;
+
   }
   .live-chat-btn{
     margin-top: 0;
