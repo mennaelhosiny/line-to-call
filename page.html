@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> line to call</title>
     <meta name="description" content="">
+    <link rel="icon" href="images/Asset 10.png" type="image/png" >
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@300;400;600;700&family=Changa:wght@300;400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=Lateef&family=Lalezar&family=Mada:wght@200;300;400;500;600;700;900&family=Markazi+Text:wght@400;500;600;700&family=Mirza:wght@400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmood.css" id="dark-mode-css" disabled>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
- 
-
-    
-
 </head>
+
 <body>
     <!-- nav -->
     <header>
@@ -27,12 +26,15 @@
                     <li><a href="page.html" onclick="closeNavbar()">اعمالنا</a></li>
                     <li><a href="service.html" onclick="closeNavbar()">خدماتنا</a></li>
                     <li><a href="projects.html" onclick="closeNavbar()"> هنا بدأت</a></li>
+                    <li class="darkmood">
+                        <i class="fas fa-moon" style="cursor: pointer; margin-top: 15px;" id="toggle-dark-mode">
+                    </i>
                 </ul>
                 <div class="menu-icon" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
                 <button class="btn-nav">
-                    <a href="https://www.pinterest.com/search/pins/?q=map&rs=typed">تواصل معنا</a>
+                    <a href="https://wa.me/201070831777">تواصل معنا</a>
                 </button>
             </div>
         </nav>
@@ -41,9 +43,9 @@
     <!-- home -->
     <div class="container4" id="work">
         <div class="side-panel">
-            <h2> تسويق الكتروني</h2>
         </div>
         <div class="text-section">
+            <h2> تسويق الكتروني</h2>
             <p>في وسط عالم متغير ملئ بالمنافسين والتحديات تحتاج لحلول تسويقية قوية تساعدك في الوصول لجمهورك المستهدف وتوعيته بعلامتك التجارية، وهذا مانحققه لك في شركة لاين تو كول</p>
             <p>فنحن شركة تسويق إلكتروني تقدم حلول تسويقية مبتكرة تعتمد على أحدث التقنيات والأدوات الرقمية لتعزيز علامتك التجارية واستهداف العملاء المحتملين بدقة وكفاءة، من خلال فريق مبدع ومتخصص لضمان تحقيق نتائج حقيقية ملموسة.
             </p>
@@ -74,11 +76,7 @@
                         <img src="images/1 (1).png" alt="Project 2">
                     </a>
                 </div>
-                <div class="slide" data-category="media-production">
-                    <a href="https://alawaji.sa/elite/" target="_blank">
-                        <img src="images/3 (1).png" alt="Project 3">
-                    </a>
-                </div>
+              
                 <div class="slide" data-category="media-production">
                     <a href="https://whitediamondhotels.com/" target="_blank">
                         <img src="images/4 (1).png" alt="Project 4">
@@ -114,19 +112,26 @@
                         <img src="images/service/glod.png" alt="Project 4">
                     </a>
                 </div>
-                <div class="slide" data-category="development">
-                    <a href="https://profile.alawaji.sa/" target="_blank">
-                        <img src="images/service/home elite.png" alt="Project 5">
-                    </a>
-                </div>
+             
                 <div class="slide" data-category="development">
                     <a href="http://homegold.alawaji.sa/" target="_blank">
                         <img src="images/service/plaza.png" alt="Project 6">
                     </a>
                 </div>
+               
+                <div class="slide" data-category="media-production">
+                    <a href="https://alawaji.sa/elite/" target="_blank">
+                        <img src="images/3 (1).png" alt="Project 3">
+                    </a>
+                </div>
                 <div class="slide" data-category="development">
                     <a href="https://alawaji.sa/elite/" target="_blank">
                         <img src="images/service/sweet.png" alt="Project 7">
+                    </a>
+                </div>
+                <div class="slide" data-category="development">
+                    <a href="https://profile.alawaji.sa/" target="_blank">
+                        <img src="images/service/home elite.png" alt="Project 5">
                     </a>
                 </div>
             </div>
@@ -138,8 +143,7 @@
             <button class="slider-btn next-btn">التالي </button>
         </div>
     </section>
-     
-            
+                
    <!-- value -->
    <section class="values-section" id="value">
     <h1> <span class="highlight">قيمنا </span></h1>
@@ -175,39 +179,39 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
 
- <!-- damanat -->
+   <!-- damanat -->
 
- <section class="guarantees-section">
-    <h1>لماذا تختار لاين تو كول لتسويق مشروعك العقاري ؟    </h1>
-    <div class="container3">
-        <div class="guarantee-item">
-            <img src="images/3car.png" alt="Icon 1">
-            <h3>خبرة عقارية عميقة</h3>
-            <p>سنوات طويلة من العمل في السوق العقاري منحتنا فهماً شاملاُ ودقيقاُ  لفهم احتياجات السوق واحتياجات العملاء . لذلك نحن جديرين بتوجيه استراتيجيات التسويق الإلكتروني الخاص بعلامتك التجارية بشكل فعّال لتحقيق النجاح والأهداف المطلوبة.
+    <section class="guarantees-section">
+        <h1>لماذا تختار لاين تو كول لتسويق مشروعك العقاري ؟    </h1>
+        <div class="container3">
+            <div class="guarantee-item">
+                <img src="images/3car.png" alt="Icon 1">
+                <h3>خبرة عقارية عميقة</h3>
+                <p>سنوات طويلة من العمل في السوق العقاري منحتنا فهماً شاملاُ ودقيقاُ  لفهم احتياجات السوق واحتياجات العملاء . لذلك نحن جديرين بتوجيه استراتيجيات التسويق الإلكتروني الخاص بعلامتك التجارية بشكل فعّال لتحقيق النجاح والأهداف المطلوبة.
 
-            </p>
+                </p>
+            </div>
+            <div class="guarantee-item">
+                <img src="images/tsweq.png" alt="Icon 2">
+                <h3>فريق من المتخصصين في التسويق الالكتروني </h3>
+                <p>نمتلك فريقاً من الخبراء المتخصصين والمتقنين لجميع جوانب التسويق العقاري و الالكتروني، مما يضمن تنفيذ استراتيجيات مبتكرة ومخصصة تلبي احتياجات مشروعك وتحقيق نتائج ملحوظة. </p>
+            </div>
+            <div class="guarantee-item">
+                <img src="images/succ.png" alt="Icon 3">
+                <h3>نجاحات مثبتة مع العملاء 
+                </h3>
+                <p> في شركة لاين توكل حققنا نجاحات كبيرة ومميزة مع عملائنا في السوق العقاري من خلال تحقيق أهدافهم وزيادة إشغال مشاريعهم بسرعة وكفاءة، مما يجعلنا شريكاً موثوقاً لتحقيق نجاحك معنا في مشروعك العقاري القادم .</p>
+            </div>
+        
         </div>
-        <div class="guarantee-item">
-            <img src="images/tsweq.png" alt="Icon 2">
-            <h3>فريق من المتخصصين في التسويق الالكتروني </h3>
-            <p>نمتلك فريقاً من الخبراء المتخصصين والمتقنين لجميع جوانب التسويق العقاري و الالكتروني، مما يضمن تنفيذ استراتيجيات مبتكرة ومخصصة تلبي احتياجات مشروعك وتحقيق نتائج ملحوظة. </p>
+        <div class="footer-text">
+            <p>تأتي ثقة العميل في المقام الأول لدى فريق العمل لذلك نقوم بتوفير المزيد من الضمانات للعميل...</p>
+            <a href="https://wa.me/201070831777" class="btn2">طلب الأن</a>
         </div>
-        <div class="guarantee-item">
-            <img src="images/succ.png" alt="Icon 3">
-            <h3>نجاحات مثبتة مع العملاء 
-            </h3>
-            <p> في شركة لاين توكل حققنا نجاحات كبيرة ومميزة مع عملائنا في السوق العقاري من خلال تحقيق أهدافهم وزيادة إشغال مشاريعهم بسرعة وكفاءة، مما يجعلنا شريكاً موثوقاً لتحقيق نجاحك معنا في مشروعك العقاري القادم .</p>
-        </div>
-      
-    </div>
-    <div class="footer-text">
-        <p>تأتي ثقة العميل في المقام الأول لدى فريق العمل لذلك نقوم بتوفير المزيد من الضمانات للعميل...</p>
-        <a href="https://wa.me/201070831777" class="btn2">طلب الأن</a>
-    </div>
-</section>
+    </section>
 
 
    <!-- ready -->
@@ -255,12 +259,12 @@
 
             </ul>
         </div>
-        <div class="footer-center">
+        <div class="footer-center suodia">
             <h2>السعودية</h2>
 
             <ul class="footer-center-list">
-              <a href="tel:+966544997242"><i class="fa-solid fa-phone"> </i>966544997242 </a>
-              <a href="https://wa.me/966544997242"><i class="fa-brands fa-whatsapp"></i>966544997242</a>
+              <a href="tel:+966565895110"><i class="fa-solid fa-phone"> </i>966565895110 </a>
+              <a href="https://wa.me/966565895110"><i class="fa-brands fa-whatsapp"></i>966565895110</a>
               <a href="mailto:customerservice@linetocall.com"><i class="fa-solid fa-envelope"></i>customerservice@linetocall.com</a>
 
             </ul>
@@ -279,7 +283,7 @@
             </div>
         </div>
     </div>
-</footer>
+    </footer>
 
     
     

@@ -85,7 +85,22 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSliderPosition();
 });
 
+// darkmode
+function toggleDarkMode() {
+    var darkModeCSS = document.getElementById('dark-mode-css');
+    darkModeCSS.disabled = !darkModeCSS.disabled;
 
+    localStorage.setItem('darkModeEnabled', darkModeCSS.disabled ? 'false' : 'true');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var darkModeEnabled = localStorage.getItem('darkModeEnabled');
+    if (darkModeEnabled === 'true') {
+        toggleDarkMode();
+    }
+});
+
+document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
 
   // service   
 let slideIndex = 0;
@@ -369,7 +384,6 @@ document.querySelector('.prev-button').addEventListener('click', showPrevCard);
 
 // Initialize by showing the first card
 showCard(index);
-
 
 
 
