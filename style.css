@@ -482,6 +482,9 @@ button:hover {
       margin-right: -120px;
       margin-top: 560px;
     }
+    video{
+      width: 330px;
+    }
 }
 
   
@@ -1245,7 +1248,6 @@ main h1{
 .cta-content h1 {
   font-size: 3em;
   font-weight: bold;
-  line-height: 1.2;
   margin-bottom: 20px;
   text-align: right;
 }
@@ -1377,7 +1379,7 @@ main h1{
 
 .testimonial-text p {
   font-size: 1.2em;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .testimonial-card {
@@ -1444,7 +1446,7 @@ main h1{
   margin-right: auto;
 }
   .testimonial-container, .map-container {
-      padding: 15px;
+      padding: 5px;
       margin-top: 20px;
       width: 100%;
       z-index: 0;
@@ -1461,7 +1463,7 @@ main h1{
   }
 
   .testimonial-text p {
-      font-size: 1em;
+      font-size: 16px;
       padding: 0 3px 0 3px;
   }
 
@@ -1497,6 +1499,9 @@ main h1{
 
   .map-container img {
       max-width: 250px;
+  }
+  .testimonial-slider {
+    height: 380px;
   }
 }
 
