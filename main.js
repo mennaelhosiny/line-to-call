@@ -16,20 +16,22 @@ function closeNavbar() {
 //fillteration
 document.addEventListener("DOMContentLoaded", function() {
     const filterButtons = document.querySelectorAll(".filter-btn");
-    const slider  = document.querySelector(".slider");
-    const slides =document.querySelectorAll(".slide");
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
     let currentIndex = 0;
     let currentSlides = Array.from(slides); // Array to hold currently visible slides
 
+    let startX = 0;
+    let endX = 0;
+
     const updateSliderPosition = () => {
-        const totalWidth = currentSlides[0].offsetWidth + 20;
-        const offset = currentIndex * totalWidth; 
-        slider.style.transform = `translateX(${offset}px)`; 
+        const totalWidth = currentSlides[0].offsetWidth + 20; // Adjust this 20 value as per your margin between slides
+        const offset = currentIndex * totalWidth;
+        slider.style.transform = `translateX(${offset}px)`; // Remove the negative sign for RTL
     };
     
-
     const showNextCard = () => {
         const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
         if (currentIndex < currentSlides.length - slidesToShow) {
@@ -41,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
     
-
     const showPrevCard = () => {
         const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
         if (currentIndex > 0) {
@@ -53,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
     
-
     prevBtn.addEventListener("click", showPrevCard);
     nextBtn.addEventListener("click", showNextCard);
 
@@ -81,9 +81,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Add touch event listeners
+    slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener("touchend", () => {
+        if (startX > endX) {
+            showNextCard(); // Swipe left, show next card
+        } else if (startX < endX) {
+            showPrevCard(); // Swipe right, show previous card
+        }
+    });
+
     // Initialize by showing the first slide
     updateSliderPosition();
 });
+
 
 // darkmode
 function toggleDarkMode() {
