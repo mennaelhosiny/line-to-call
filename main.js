@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const updateSliderPosition = () => {
         const totalWidth = currentSlides[0].offsetWidth + 20; // Adjust this 20 value as per your margin between slides
-        const offset = -currentIndex * totalWidth; // Negative sign for LTR
+        const offset = currentIndex * totalWidth; // No negative sign for RTL
         slider.style.transform = `translateX(${offset}px)`;
     };
     
@@ -97,10 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     slider.addEventListener("touchend", () => {
         const touchThreshold = 50; // Minimum distance to recognize a swipe
-        if (startX - endX > touchThreshold) {
-            showNextCard(); // Swipe left, show next card
-        } else if (endX - startX > touchThreshold) {
-            showPrevCard(); // Swipe right, show previous card
+        if (endX - startX > touchThreshold) {
+            showNextCard(); // Swipe right, show next card (RTL)
+        } else if (startX - endX > touchThreshold) {
+            showPrevCard(); // Swipe left, show previous card (RTL)
         }
     });
 
