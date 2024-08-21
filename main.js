@@ -9,8 +9,17 @@ function closeNavbar() {
     const navbarLinks = document.querySelector('.nav-links');
     navbarLinks.classList.remove('active');
 }
+//  dropdown
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
-
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener("click", function() {
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle("show");
+        });
+    });
+});
 
 
 //fillteration
@@ -21,37 +30,35 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
     let currentIndex = 0;
-    let currentSlides = Array.from(slides); // Array to hold currently visible slides
+    let currentSlides = Array.from(slides);
 
     let startX = 0;
     let endX = 0;
 
     const updateSliderPosition = () => {
         const totalWidth = currentSlides[0].offsetWidth + 20; // Adjust this 20 value as per your margin between slides
-        const offset = currentIndex * totalWidth;
-        slider.style.transform = `translateX(${offset}px)`; // Remove the negative sign for RTL
+        const offset = -currentIndex * totalWidth; // Negative sign for LTR
+        slider.style.transform = `translateX(${offset}px)`;
     };
     
     const showNextCard = () => {
         const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
         if (currentIndex < currentSlides.length - slidesToShow) {
             currentIndex++;
-            updateSliderPosition();
         } else {
-            currentIndex = 0;  
-            updateSliderPosition();
+            currentIndex = 0;
         }
+        updateSliderPosition();
     };
     
     const showPrevCard = () => {
         const slidesToShow = window.innerWidth >= 1024 ? 4 : 1; 
         if (currentIndex > 0) {
             currentIndex--;
-            updateSliderPosition();
         } else {
-            currentIndex = currentSlides.length - slidesToShow;       
-            updateSliderPosition();
+            currentIndex = currentSlides.length - slidesToShow;
         }
+        updateSliderPosition();
     };
     
     prevBtn.addEventListener("click", showPrevCard);
@@ -65,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const filter = button.getAttribute("data-filter");
             currentIndex = 0;
 
-            // Filter the slides based on data-category
             currentSlides = Array.from(slides).filter(slide => {
                 if (filter === "all" || slide.getAttribute("data-category") === filter) {
                     slide.style.display = "block";
@@ -76,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Reset the slider to the first slide of the filtered group
             updateSliderPosition();
         });
     });
@@ -91,9 +96,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     slider.addEventListener("touchend", () => {
-        if (startX > endX) {
+        const touchThreshold = 50; // Minimum distance to recognize a swipe
+        if (startX - endX > touchThreshold) {
             showNextCard(); // Swipe left, show next card
-        } else if (startX < endX) {
+        } else if (endX - startX > touchThreshold) {
             showPrevCard(); // Swipe right, show previous card
         }
     });

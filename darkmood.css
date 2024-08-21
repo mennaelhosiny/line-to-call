@@ -43,7 +43,6 @@ body {
   color: var(--accent-color);
 }
 .menu-icon {
-  font-size: 30px;
   cursor: pointer;
   color: #fff;
 }
@@ -90,7 +89,6 @@ button {
   border: none;
   cursor: pointer;
   margin: 5px;
-  font-size: 20px;
   border-radius: 7px;
 }
 
@@ -280,7 +278,6 @@ button:hover {
   }
   
   .values-section h1 {
-    font-size: 40px;
     color: #f4a261; 
   }
   
@@ -474,7 +471,6 @@ button:hover {
 }
 
 .guarantees-section h1 {
-  font-size: 2.5rem;
   color: var(--blue);
   margin-bottom: 40px;
 }
@@ -514,13 +510,11 @@ button:hover {
   color: #fff;
 }
 .guarantee-item h3 {
-  font-size: 1.5rem;
   color: #f3ac4f;
   margin-bottom: 10px;
 }
 
 .guarantee-item p {
-  font-size: 1rem;
   color: var(--blue);
   line-height: 1.6;
 }
@@ -533,7 +527,6 @@ button:hover {
 }
 
 .footer-text p {
-  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -561,14 +554,12 @@ button:hover {
 
 .section-title {
   text-align: center;
-  font-size: 3em;
   margin-bottom: 10px;
   color: var(--blue);
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1em;
   color: #777;
   margin-bottom: 30px;
 }
@@ -630,12 +621,10 @@ button:hover {
 
 
 .service-content h3 {
-  font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 .service-content p {
-  font-size: 1em;
   margin-bottom: 20px;
 }
 
@@ -645,7 +634,6 @@ button:hover {
 }
 
 .service-content ul li {
-  font-size: 1em;
   margin-bottom: 5px;
   padding-left: 20px;
   position: relative;
@@ -666,7 +654,6 @@ button:hover {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
 }
 
 .read-more:hover {
@@ -699,13 +686,11 @@ button:hover {
 }
 
 .text-content h2 {
-  font-size: 2em;
   margin-bottom: 20px;
   color: var(--blue);
 }
 
 .text-content p {
-  font-size: 1.2em;
   line-height: 1.6;
 }
 
@@ -722,18 +707,15 @@ button:hover {
 
 
 .years .number {
-  font-size: 5em;
   margin-right: 10px;
   color: #333;
 }
 
 .years .label {
-  font-size: 2em;
   color: #666;
 }
 
 .description {
-  font-size: 1.5em;
   margin-bottom: 20px;
   color: #999;
 }
