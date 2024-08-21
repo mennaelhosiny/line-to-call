@@ -1965,7 +1965,7 @@ footer h2{
 
 @media (max-width: 480px) {
   .slide img{
-    width: 100%;
+    width: 350px;
     height: 350px;
   }
   .filter-btn{
