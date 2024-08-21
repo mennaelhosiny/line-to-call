@@ -267,6 +267,15 @@ button:hover {
         font-size: 15px;
     
     }
+    .btn1,.btn2{
+      background-color: var(--blue);
+      color: #fff;
+      display: block;
+      width: 70%;
+      text-align: center;
+      margin: auto;
+      margin-top: 10px;
+    }
 }
 
 
@@ -694,7 +703,7 @@ ul li {
   align-items: center;
   height: 100%;
   margin: 0;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 
@@ -1832,25 +1841,20 @@ main h1{
 .dropdown-toggle {
   display: flex;
   align-items: center;
+  justify-content: space-between; 
+  width: 100%; 
 }
 
 .dropdown-toggle i {
+  margin-left: 20px; 
   transition: transform 0.3s ease;
   font-size: 20px;
-  justify-content: flex-end;
-  display: none;
-
 }
 
-footer h2{
-  justify-content: right; 
-
-}
-.dropdown-toggle.active i {
-  transform: rotate(180deg); 
+footer h2 {
+  font-size: 30px;
 }
 
-/* Mobile-specific styles */
 @media only screen and (max-width: 768px) {
   .dropdown-menu {
       display: none; 
@@ -1863,10 +1867,11 @@ footer h2{
   .dropdown-menu.show {
       display: block; 
   }
-  .dropdown-toggle i{
+  .dropdown-toggle i {
     display: block;
   }
 }
+
 
 
 /* page2 */
